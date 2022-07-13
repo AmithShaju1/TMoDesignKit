@@ -1,6 +1,13 @@
-public struct TMoDesignKit {
-    public private(set) var text = "Hello, World!"
+import SwiftUI
 
+public struct TMoDesignKit {
+    public struct ExtractedView: View {
+        public var body: some View {
+            Button("Submit") {
+                print("Button pressed")
+            }
+        }
+    }
     public init() {
     }
 }
