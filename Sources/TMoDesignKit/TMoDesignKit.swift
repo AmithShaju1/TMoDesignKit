@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct TMoDesignKit {
+    @available(iOS 15.0, *)
     public struct CardView: View {
         public var body: some View {
             ZStack {
