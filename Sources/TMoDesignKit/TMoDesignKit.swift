@@ -124,6 +124,8 @@ public struct TMoDesignKit {
                     Spacer()
             //        }
                 }
+        public init() {
+        }
     }
     
 }
