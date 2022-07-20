@@ -89,4 +89,41 @@ public struct TMoDesignKit {
         }
     }
     
+    public struct AppleCardView: View {
+        public var body: some View {
+            //        GeometryReader { proxy in
+            //        Text("RMS App")
+            //
+            //        TMoDesignKit.CardView()
+                    
+                    Label("Promo 2020 Apple Trade", systemImage: "")
+                            .frame(width: 400, height: 100, alignment: .center)
+                            .font(.system(size: 30,weight: .bold))
+                    
+                    Form {
+                        
+                        Section {
+                            
+                            CellView(key: "Status",value: "Active - Apply_Credit")
+                            CellView(key: "Monthly Bill Credit",value: "$5")
+                            CellView(key: "Credit Balance",value: "$122")
+                            CellView(key: "Start Date",value: "1/2/22")
+                            CellView(key: "Duration",value: "5 of 22")
+                        }
+                        Section(header: Text("Promo Balance")) {
+                            CellView(key: "Initial Credit Balance",value: "$22")
+                            CellView(key: "Remaining Credit",value: "$12")
+                            CellView(key: "Total Credited Amount",value: "$32")
+                               
+                        }
+                    
+
+                    }
+                    Button("Close") {}
+                        .foregroundColor(.red)
+                    Spacer()
+            //        }
+                }
+    }
+    
 }
