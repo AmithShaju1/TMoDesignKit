@@ -141,18 +141,18 @@ public struct TMoDesignKit {
 //        }
     }
     
-    public class Credit {
+    public struct Credit {
         enum Status : String {
             case new = "New"
             case processing = "Processing"
             case approved = "Active"
             case closed = "Closed"
         }
-        public var status : String?
-        public var monthlyBillCredit : Int?
-        public var creditBalance : Int?
+        public var status : String
+        public var monthlyBillCredit : Int
+        public var creditBalance : Int
         public var startDate : Date?
-        public var duration : String?
+        public var duration : String
         public var promoBalance : PromoBalance
         
         public init() {
@@ -167,9 +167,9 @@ public struct TMoDesignKit {
     }
 
     public struct PromoBalance {
-        public var initialCreditBalance : Int?
-        public var remainingCredit : Int?
-        public var totalCreditAmount : Int?
+        public var initialCreditBalance : Int
+        public var remainingCredit : Int
+        public var totalCreditAmount : Int
         
         public init(initialCreditBalance: Int, remainingCredit: Int, totalCreditAmount: Int) {
             self.initialCreditBalance = initialCreditBalance
