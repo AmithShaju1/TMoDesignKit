@@ -27,12 +27,12 @@ public class Credit {
         case approved = "Active"
         case closed = "Closed"
     }
-    var status : String?
-    var monthlyBillCredit : Int?
-    var creditBalance : Int?
-    var startDate : Date?
-    var duration : String?
-    var promoBalance : PromoBalance
+    public var status : String?
+    public var monthlyBillCredit : Int?
+    public var creditBalance : Int?
+    public var startDate : Date?
+    public var duration : String?
+    public var promoBalance : PromoBalance
     
     init() {
         status = Status.new.rawValue
@@ -45,8 +45,8 @@ public class Credit {
     }
 }
 
-struct PromoBalance {
-    var initialCreditBalance : Int?
-    var remainingCredit : Int?
-    var totalCreditAmount : Int?
+public struct PromoBalance {
+    public var initialCreditBalance : Int?
+    public var remainingCredit : Int?
+    public var totalCreditAmount : Int?
 }
