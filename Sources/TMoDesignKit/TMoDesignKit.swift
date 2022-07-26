@@ -107,7 +107,7 @@ public struct TMoDesignKit {
                     
                     Section {
                         
-                        CellView(key: "Status",value: "Active - Apply_Credit")
+                        CellView(key: "Status",value: status)
                         CellView(key: "Monthly Bill Credit",value: "$5")
                         CellView(key: "Credit Balance",value: "$122")
                         CellView(key: "Start Date",value: "1/2/22")
