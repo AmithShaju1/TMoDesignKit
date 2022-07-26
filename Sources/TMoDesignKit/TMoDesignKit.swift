@@ -3,6 +3,7 @@ import SwiftUI
 public struct TMoDesignKit {
     @available(iOS 15.0, *)
     public struct CardView: View {
+        @State var credit : Credit
         public var body: some View {
             ZStack {
                 Label("", systemImage: "")
@@ -25,13 +26,13 @@ public struct TMoDesignKit {
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Status")
                                 .bold()
-                            Text("Active - Apply_Credit")
+                            Text(credit.status)
                         }
                         
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Monthly Bill Credit")
                                 .bold()
-                            Text("$5")
+                            Text("$\(credit.monthlyBillCredit)")
                         }
                     }
                     Label("", systemImage: "")
@@ -41,7 +42,7 @@ public struct TMoDesignKit {
                         VStack(alignment: .leading, spacing: 20.0) {
                             HStack {
                                 Text("Credit Balance")
-                                Text("$122")
+                                Text("$\(credit.creditBalance)")
                                     .bold()
                             }
                             HStack {
@@ -51,7 +52,7 @@ public struct TMoDesignKit {
                             }
                             HStack {
                                 Text(" Duration")
-                                Text("5 of 22")
+                                Text(credit.duration)
                                     .bold()
                             }
                         }
@@ -60,13 +61,13 @@ public struct TMoDesignKit {
                                 .bold()
                             HStack {
                                 Text("Initial Credit Balance")
-                                Text("$222")
+                                Text("$\(credit.promoBalance.initialCreditBalance)")
                                    
                             }
                             
                             HStack {
                                 Text("Remaining Credit")
-                                Text("$44")
+                                Text("$\(credit.promoBalance.remainingCredit)")
                                    
                             }
                             Label("", systemImage: "")
@@ -74,7 +75,7 @@ public struct TMoDesignKit {
                                 .background(.gray)
                             HStack {
                                 Text("Total Credited Amount")
-                                Text("$24")
+                                Text("$\(credit.promoBalance.totalCreditAmount)")
                                    
                             }
                         }
@@ -85,7 +86,8 @@ public struct TMoDesignKit {
             
             
         }
-        public init() {
+        public init(credit:Credit) {
+            self._credit = State(initialValue: credit)
         }
     }
     
