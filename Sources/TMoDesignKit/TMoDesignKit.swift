@@ -99,7 +99,7 @@ public struct TMoDesignKit {
                     
             VStack {
                 
-                Label("Promo 2022 Apple Trade", systemImage: "")
+                Label(cardTitle, systemImage: "")
                                 .frame(width: 400, height: 100, alignment: .center)
                             .font(.system(size: 30,weight: .bold))
                 Form {
