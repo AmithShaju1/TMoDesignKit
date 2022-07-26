@@ -91,7 +91,8 @@ public struct TMoDesignKit {
     
     public struct AppleCardView: View {
         @State var cardTitle: String
-        @State var status: String
+        @State var credit : Credit
+//        @State var status: String?
         public var body: some View {
             //        GeometryReader { proxy in
             //        Text("RMS App")
@@ -107,16 +108,16 @@ public struct TMoDesignKit {
                     
                     Section {
                         
-                        CellView(key: "Status",value: status)
-                        CellView(key: "Monthly Bill Credit",value: "$5")
-                        CellView(key: "Credit Balance",value: "$122")
-                        CellView(key: "Start Date",value: "1/2/22")
-                        CellView(key: "Duration",value: "5 of 22")
+                        CellView(key: "Status",value: credit.status)
+                        CellView(key: "Monthly Bill Credit",value: "$\(String(describing: credit.monthlyBillCredit))")
+                        CellView(key: "Credit Balance",value: "$\(String(describing: credit.creditBalance))")
+//                        CellView(key: "Start Date",value: credit.startDate)
+                        CellView(key: "Duration",value: credit.duration)
                     }
                     Section(header: Text("Promo Balance")) {
-                        CellView(key: "Initial Credit Balance",value: "$22")
-                        CellView(key: "Remaining Credit",value: "$12")
-                        CellView(key: "Total Credited Amount",value: "$32")
+                        CellView(key: "Initial Credit Balance",value: "$\(String(describing: credit.promoBalance.initialCreditBalance))")
+                        CellView(key: "Remaining Credit",value: "$\(String(describing: credit.promoBalance.remainingCredit))")
+                        CellView(key: "Total Credited Amount",value: "$\(String(describing: credit.promoBalance.totalCreditAmount))")
                            
                     }
                 
@@ -130,9 +131,9 @@ public struct TMoDesignKit {
                     
             //        }
                 }
-        public init(cardTitle:String, status:String) {
+        public init(cardTitle:String, credit:Credit) {
             self._cardTitle = State(initialValue: cardTitle)
-            self._status = State(initialValue: status)
+            self._credit = State(initialValue: credit)
         }
 //        public init(cardTitle:String, status:Binding<String>) {
 //            self._cardTitle = State(initialValue: cardTitle)
