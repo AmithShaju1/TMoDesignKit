@@ -34,7 +34,7 @@ public class Credit {
     public var duration : String?
     public var promoBalance : PromoBalance
     
-    init() {
+    public init() {
         status = Status.new.rawValue
         monthlyBillCredit = 0
         creditBalance = 0
@@ -49,4 +49,10 @@ public struct PromoBalance {
     public var initialCreditBalance : Int?
     public var remainingCredit : Int?
     public var totalCreditAmount : Int?
+    
+    public init(initialCreditBalance: Int, remainingCredit: Int, totalCreditAmount: Int) {
+        self.initialCreditBalance = initialCreditBalance
+        self.remainingCredit = remainingCredit
+        self.totalCreditAmount = totalCreditAmount
+    }
 }
