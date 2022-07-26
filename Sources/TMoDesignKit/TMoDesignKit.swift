@@ -91,6 +91,7 @@ public struct TMoDesignKit {
     
     public struct AppleCardView: View {
         @State var cardTitle: String
+        @Binding var status: String
         public var body: some View {
             //        GeometryReader { proxy in
             //        Text("RMS App")
@@ -129,8 +130,9 @@ public struct TMoDesignKit {
                     
             //        }
                 }
-        public init(cardTitle:String) {
+        public init(cardTitle:String, status:Binding<String>) {
             self._cardTitle = State(initialValue: cardTitle)
+            self._status = status
         }
     }
     
