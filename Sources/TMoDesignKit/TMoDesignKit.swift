@@ -2,20 +2,117 @@ import SwiftUI
 
 public struct TMoDesignKit {
     @available(iOS 15.0, *)
+    
+    
+    public struct NewCardView: View {
+        @State var credit : Credit
+        public var body: some View {
+            ZStack {
+        Label("", systemImage: "")
+            .frame(width: 600, height: 400, alignment: .center)
+            .border(Color.pink, width: 3)
+            //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
+        VStack(alignment: .center, spacing: 20) {
+            HStack(alignment: .top) {
+//                        Button("Close") {
+//                            print("Close button pressed")
+//                        }
+                Text("Promo 2020 Apple Trade")
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                    
+                    
+            }
+            Label("", systemImage: "")
+                .frame(width: 500, height: 2, alignment: .center)
+                .background(.gray)
+            HStack() {
+                
+                VStack(alignment: .leading, spacing: 10.0) {
+                    Text("Status")
+                        .bold()
+                    Text("closed")
+                }
+                .frame(width: 250, height: 50, alignment: .leading)
+                
+                VStack(alignment: .leading, spacing: 10.0) {
+                    Text("Monthly Bill Credit")
+                        .bold()
+                    Text("$50")
+                }
+                .frame(width: 250, height: 50, alignment: .leading)
+                
+            }
+            Label("", systemImage: "")
+                .frame(width: 500, height: 2, alignment: .center)
+                .background(.gray)
+            HStack() {
+                
+                VStack(alignment: .leading, spacing: 20.0) {
+                    HStack {
+                        Text("Credit Balance")
+                        Text("$8")
+                            .bold()
+                    }
+                    HStack {
+                        Text("Start Date")
+                        Text("1/2/22")
+                            .bold()
+                    }
+                    HStack {
+                        Text(" Duration")
+                        Text("4 of 7")
+                            .bold()
+                    }
+                }.frame(width: 250, height: 50, alignment: .leading)
+                
+                VStack(alignment: .leading, spacing: 10.0) {
+                    Text("Promo Balance")
+                        .bold()
+                    HStack {
+                        Text("Initial Credit Balance")
+                        Text("$7")
+                           
+                    }
+                    
+                    HStack {
+                        Text("Remaining Credit")
+                        Text("$9")
+                           
+                    }
+                    Label("", systemImage: "")
+                        .frame(width: 250, height: 2, alignment: .center)
+                        .background(.gray)
+                    HStack {
+                        Text("Total Credited Amount")
+                        Text("$0")
+                           
+                    }
+                }
+                
+            }
+        }
+       
+    }
+            public init(credit:Credit) {
+                self._credit = State(initialValue: credit)
+            }
+        }
     public struct CardView: View {
         @State var credit : Credit
         public var body: some View {
             ZStack {
                 Label("", systemImage: "")
                     .frame(width: 600, height: 400, alignment: .center)
-                    .background().shadow(color: .red, radius: 20, x: 10, y: 10)
+                    .border(Color.red, width: 3)
+                    //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
                 VStack(alignment: .center) {
                     HStack(alignment: .top, spacing: 50.0) {
-                        Button("Close") {
-                            print("Close button pressed")
-                        }
+//                        Button("Close") {
+//                            print("Close button pressed")
+//                        }
                         Text("Promo 2020 Apple Trade")
-                            .multilineTextAlignment(.leading)
+                            .multilineTextAlignment(.center)
                             
                             
                     }
@@ -168,7 +265,7 @@ public struct TMoDesignKit {
         }
     }
 
-    public struct PromoBalance {
+    public struct PromoBalan ce {
         public var initialCreditBalance : Int
         public var remainingCredit : Int
         public var totalCreditAmount : Int
