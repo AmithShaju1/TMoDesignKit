@@ -33,14 +33,14 @@ public struct TMoDesignKit {
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Status")
                                 .bold()
-                            Text("closed")
+                            Text(credit.status)
                         }
                         .frame(width: 250, height: 50, alignment: .leading)
                         
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Monthly Bill Credit")
                                 .bold()
-                            Text("$50")
+                            Text("$\(credit.monthlyBillCredit)")
                         }
                         .frame(width: 250, height: 50, alignment: .leading)
                         
@@ -53,7 +53,7 @@ public struct TMoDesignKit {
                         VStack(alignment: .leading, spacing: 20.0) {
                             HStack {
                                 Text("Credit Balance")
-                                Text("$8")
+                                Text("$\(credit.creditBalance)")
                                     .bold()
                             }
                             HStack {
@@ -63,7 +63,7 @@ public struct TMoDesignKit {
                             }
                             HStack {
                                 Text(" Duration")
-                                Text("4 of 7")
+                                Text(credit.duration)
                                     .bold()
                             }
                         }.frame(width: 250, height: 50, alignment: .leading)
@@ -73,13 +73,13 @@ public struct TMoDesignKit {
                                 .bold()
                             HStack {
                                 Text("Initial Credit Balance")
-                                Text("$7")
+                                Text("$\(credit.promoBalance.initialCreditBalance)")
                                 
                             }
                             
                             HStack {
                                 Text("Remaining Credit")
-                                Text("$9")
+                                Text("$\(credit.promoBalance.remainingCredit)")
                                 
                             }
                             Label("", systemImage: "")
@@ -87,7 +87,7 @@ public struct TMoDesignKit {
                                 .background(.gray)
                             HStack {
                                 Text("Total Credited Amount")
-                                Text("$0")
+                                Text("$\(credit.promoBalance.totalCreditAmount)")
                                 
                             }
                         }
