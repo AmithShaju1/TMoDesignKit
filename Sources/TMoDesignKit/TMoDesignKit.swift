@@ -1,24 +1,24 @@
 import SwiftUI
-
+public var magentaTMo = Color(CGColor.init(red: 208/255, green: 44/255, blue: 115/255, alpha: 1.0))
 public struct TMoDesignKit {
+   
     @available(iOS 15.0, *)
     
     
     public struct NewCardView: View {
         @State var credit : Credit
+        
         public var body: some View {
             ZStack {
                 Label("", systemImage: "")
                     .frame(width: 600, height: 400, alignment: .center)
-                    .border(Color.pink, width: 3)
+                    .border(magentaTMo, width: 3)
+                    .cornerRadius(10)
                 //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
                 VStack(alignment: .center, spacing: 20) {
                     Image(systemName: "house")
                         .accessibilityLabel("Home Sweet Home")
                     HStack(alignment: .top) {
-                        //                        Button("Close") {
-                        //                            print("Close button pressed")
-                        //                        }
                         Text("Promo 2020 Apple Trade")
                             .font(.largeTitle)
                             .multilineTextAlignment(.center)
