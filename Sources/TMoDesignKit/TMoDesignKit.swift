@@ -106,10 +106,13 @@ public struct TMoDesignKit {
         @State var credit : Credit
         public var body: some View {
             ZStack {
-                Label("", systemImage: "")
-                    .frame(width: 600, height: 400, alignment: .center)
-                    .border(Color.red, width: 3)
-                //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
+                if #available(iOS 15.0, *) {
+                    Label("", systemImage: "")
+                        .frame(width: 600, height: 400, alignment: .center)
+                        .background().shadow(color: .red, radius: 20, x: 10, y: 10)
+                } else {
+                    // Fallback on earlier versions
+                }
                 VStack(alignment: .center) {
                     HStack(alignment: .top, spacing: 50.0) {
                         //                        Button("Close") {
