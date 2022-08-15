@@ -13,6 +13,8 @@ public struct TMoDesignKit {
                     .border(Color.pink, width: 3)
                 //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
                 VStack(alignment: .center, spacing: 20) {
+                    Image(systemName: "house")
+                        .accessibilityLabel("Home Sweet Home")
                     HStack(alignment: .top) {
                         //                        Button("Close") {
                         //                            print("Close button pressed")
