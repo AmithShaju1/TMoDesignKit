@@ -227,51 +227,54 @@ public struct TMoDesignKit {
         @State var credit : Credit
         public var body: some View {
             ZStack {
-                if #available(iOS 15.0, *) {
-                    Label("", systemImage: "")
-                        .frame(width: 600, height: 400, alignment: .center)
-                        .background().shadow(color: .red, radius: 20, x: 10, y: 10)
-                } else {
-                    // Fallback on earlier versions
-                }
-                VStack(alignment: .center) {
-                    HStack(alignment: .top, spacing: 50.0) {
-                        //                        Button("Close") {
-                        //                            print("Close button pressed")
-                        //                        }
+                Label("", systemImage: "")
+                    .frame(width: 600, height: 400, alignment: .center)
+                    .border(magentaTMo, width: 3)
+                    .cornerRadius(10)
+                //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
+                VStack(alignment: .center, spacing: 20) {
+                    Image(systemName: "house")
+                        .accessibilityLabel("Home Sweet Home")
+                    HStack(alignment: .top) {
                         Text("Promo 2020 Apple Trade")
+                            .font(.largeTitle)
                             .multilineTextAlignment(.center)
                         
                         
                     }
                     if #available(iOS 15.0, *) {
                         Label("", systemImage: "")
-                            .frame(width: 400, height: 2, alignment: .center)
+                            .frame(width: 500, height: 2, alignment: .center)
                             .background(.gray)
                     } else {
                         // Fallback on earlier versions
                     }
-                    HStack(spacing: 100.0) {
+                    HStack() {
+                        
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Status")
                                 .bold()
                             Text(credit.status)
                         }
+                        .frame(width: 250, height: 50, alignment: .leading)
                         
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Monthly Bill Credit")
                                 .bold()
                             Text("$\(credit.monthlyBillCredit)")
                         }
+                        .frame(width: 250, height: 50, alignment: .leading)
+                        
                     }
                     if #available(iOS 15.0, *) {
                         Label("", systemImage: "")
-                            .frame(width: 400, height: 2, alignment: .center)
+                            .frame(width: 500, height: 2, alignment: .center)
                             .background(.gray)
                     } else {
                         // Fallback on earlier versions
                     }
-                    HStack(spacing: 50.0) {
+                    HStack() {
+                        
                         VStack(alignment: .leading, spacing: 20.0) {
                             HStack {
                                 Text("Credit Balance")
@@ -288,7 +291,8 @@ public struct TMoDesignKit {
                                 Text(credit.duration)
                                     .bold()
                             }
-                        }
+                        }.frame(width: 250, height: 50, alignment: .leading)
+                        
                         VStack(alignment: .leading, spacing: 10.0) {
                             Text("Promo Balance")
                                 .bold()
@@ -305,7 +309,7 @@ public struct TMoDesignKit {
                             }
                             if #available(iOS 15.0, *) {
                                 Label("", systemImage: "")
-                                    .frame(width: 200, height: 2, alignment: .center)
+                                    .frame(width: 250, height: 2, alignment: .center)
                                     .background(.gray)
                             } else {
                                 // Fallback on earlier versions
@@ -316,12 +320,11 @@ public struct TMoDesignKit {
                                 
                             }
                         }
+                        
                     }
                 }
                 
             }
-            
-            
         }
         public init(credit:Credit) {
             self._credit = State(initialValue: credit)
