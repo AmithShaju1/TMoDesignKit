@@ -4,8 +4,7 @@ public struct TMoDesignKit {
    
     @available(iOS 15.0, *)
     
-    
-    public struct NewCardView: View {
+    public struct CardView: View {
         @State var credit : Credit
         
         public var body: some View {
@@ -25,9 +24,13 @@ public struct TMoDesignKit {
                         
                         
                     }
-                    Label("", systemImage: "")
-                        .frame(width: 500, height: 2, alignment: .center)
-                        .background(.gray)
+                    if #available(iOS 15.0, *) {
+                        Label("", systemImage: "")
+                            .frame(width: 500, height: 2, alignment: .center)
+                            .background(.gray)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     HStack() {
                         
                         VStack(alignment: .leading, spacing: 10.0) {
@@ -45,9 +48,13 @@ public struct TMoDesignKit {
                         .frame(width: 250, height: 50, alignment: .leading)
                         
                     }
-                    Label("", systemImage: "")
-                        .frame(width: 500, height: 2, alignment: .center)
-                        .background(.gray)
+                    if #available(iOS 15.0, *) {
+                        Label("", systemImage: "")
+                            .frame(width: 500, height: 2, alignment: .center)
+                            .background(.gray)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     HStack() {
                         
                         VStack(alignment: .leading, spacing: 20.0) {
@@ -82,9 +89,13 @@ public struct TMoDesignKit {
                                 Text("$\(credit.promoBalance.remainingCredit)")
                                 
                             }
-                            Label("", systemImage: "")
-                                .frame(width: 250, height: 2, alignment: .center)
-                                .background(.gray)
+                            if #available(iOS 15.0, *) {
+                                Label("", systemImage: "")
+                                    .frame(width: 250, height: 2, alignment: .center)
+                                    .background(.gray)
+                            } else {
+                                // Fallback on earlier versions
+                            }
                             HStack {
                                 Text("Total Credited Amount")
                                 Text("$\(credit.promoBalance.totalCreditAmount)")
@@ -102,7 +113,117 @@ public struct TMoDesignKit {
         }
     }
     
-    public struct CardView: View {
+    public struct NewCardView: View {
+        @State var credit : Credit
+        
+        public var body: some View {
+            ZStack {
+                Label("", systemImage: "")
+                    .frame(width: 600, height: 400, alignment: .center)
+                    .border(magentaTMo, width: 3)
+                    .cornerRadius(10)
+                //.background().shadow(color: .red, radius: 20, x: 10, y: 10)
+                VStack(alignment: .center, spacing: 20) {
+                    Image(systemName: "house")
+                        .accessibilityLabel("Home Sweet Home")
+                    HStack(alignment: .top) {
+                        Text("Promo 2020 Apple Trade")
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                        
+                        
+                    }
+                    if #available(iOS 15.0, *) {
+                        Label("", systemImage: "")
+                            .frame(width: 500, height: 2, alignment: .center)
+                            .background(.gray)
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    HStack() {
+                        
+                        VStack(alignment: .leading, spacing: 10.0) {
+                            Text("Status")
+                                .bold()
+                            Text(credit.status)
+                        }
+                        .frame(width: 250, height: 50, alignment: .leading)
+                        
+                        VStack(alignment: .leading, spacing: 10.0) {
+                            Text("Monthly Bill Credit")
+                                .bold()
+                            Text("$\(credit.monthlyBillCredit)")
+                        }
+                        .frame(width: 250, height: 50, alignment: .leading)
+                        
+                    }
+                    if #available(iOS 15.0, *) {
+                        Label("", systemImage: "")
+                            .frame(width: 500, height: 2, alignment: .center)
+                            .background(.gray)
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    HStack() {
+                        
+                        VStack(alignment: .leading, spacing: 20.0) {
+                            HStack {
+                                Text("Credit Balance")
+                                Text("$\(credit.creditBalance)")
+                                    .bold()
+                            }
+                            HStack {
+                                Text("Start Date")
+                                Text("1/2/22")
+                                    .bold()
+                            }
+                            HStack {
+                                Text(" Duration")
+                                Text(credit.duration)
+                                    .bold()
+                            }
+                        }.frame(width: 250, height: 50, alignment: .leading)
+                        
+                        VStack(alignment: .leading, spacing: 10.0) {
+                            Text("Promo Balance")
+                                .bold()
+                            HStack {
+                                Text("Initial Credit Balance")
+                                Text("$\(credit.promoBalance.initialCreditBalance)")
+                                
+                            }
+                            
+                            HStack {
+                                Text("Remaining Credit")
+                                Text("$\(credit.promoBalance.remainingCredit)")
+                                
+                            }
+                            if #available(iOS 15.0, *) {
+                                Label("", systemImage: "")
+                                    .frame(width: 250, height: 2, alignment: .center)
+                                    .background(.gray)
+                            } else {
+                                // Fallback on earlier versions
+                            }
+                            HStack {
+                                Text("Total Credited Amount")
+                                Text("$\(credit.promoBalance.totalCreditAmount)")
+                                
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
+        public init(credit:Credit) {
+            self._credit = State(initialValue: credit)
+        }
+    }
+    
+    
+    public struct OldCardView: View {
         @State var credit : Credit
         public var body: some View {
             ZStack {
@@ -206,7 +327,7 @@ public struct TMoDesignKit {
             self._credit = State(initialValue: credit)
         }
     }
-    
+   
     public struct AppleCardView: View {
         @State var cardTitle: String
         @State var credit : Credit
