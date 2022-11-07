@@ -388,8 +388,7 @@ public struct TMoDesignKit {
             VStack {
                 
                 Label(cardTitle, systemImage: "")
-                    .frame(width: 400, height: 100, alignment: .center)
-                    .font(.system(size: 30,weight: .bold))
+                    .font(.system(size: 20,weight: .bold))
                 Form {
                     
                     Section {
@@ -409,8 +408,7 @@ public struct TMoDesignKit {
                     
                     
                 }
-                Button("Close") {}
-                    .foregroundColor(.red)
+                
                 Spacer()
             }
             
