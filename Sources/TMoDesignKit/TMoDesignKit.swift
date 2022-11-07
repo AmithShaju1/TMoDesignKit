@@ -11,8 +11,9 @@ public struct TMoDesignKit {
                 
                 //Todo : Add voiceover when tapped
             }
-            .background(.purple)
+            
             .frame(width: 240, height: 80, alignment: .center)
+            .background(.purple)
             .cornerRadius(5.0)
             //.font(.largeTitle)
             .foregroundColor(.white)
