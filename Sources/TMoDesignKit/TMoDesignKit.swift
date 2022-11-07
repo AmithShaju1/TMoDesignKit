@@ -24,6 +24,30 @@ public struct TMoDesignKit {
         }
     }
     
+    public struct IconView: View {
+        @State var title : String
+        public var body: some View {
+            if #available(iOS 15.0, *) {
+                Button(action: {
+                    print("button pressed")
+                }) {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                    
+                        .padding(10)
+                        .foregroundColor(.white)
+                }
+                .frame(width: 60,height: 60,alignment: .center)
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        }
+        public init(title:String) {
+            self._title = State(initialValue: title)
+        }
+    }
+    
     public struct CardView: View {
         @State var credit : Credit
         
