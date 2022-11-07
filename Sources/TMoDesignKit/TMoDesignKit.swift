@@ -14,7 +14,7 @@ public struct TMoDesignKit {
             .background(.purple)
             .frame(width: 240, height: 80, alignment: .center)
             .cornerRadius(5.0)
-            .font(.largeTitle)
+            //.font(.largeTitle)
             .foregroundColor(.white)
             
         }
