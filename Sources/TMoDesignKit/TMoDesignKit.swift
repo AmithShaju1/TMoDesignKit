@@ -5,7 +5,7 @@ public struct TMoDesignKit {
     @available(iOS 15.0, *)
     
     public struct ButtonView: View {
-        let title : String
+        @State var title : String
         public var body: some View {
             Button(title) {
                 
@@ -18,6 +18,9 @@ public struct TMoDesignKit {
             .font(.largeTitle)
             .foregroundColor(.white)
             
+        }
+        public init(title:String) {
+            self._title = State(initialValue: title)
         }
     }
     
