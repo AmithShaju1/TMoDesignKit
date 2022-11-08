@@ -1,6 +1,6 @@
 import SwiftUI
-public var magentaTMo = Color(CGColor.init(red: 208/255, green: 44/255, blue: 115/255, alpha: 1.0))
-public struct TMoDesignKit {
+public var brandColor = Color(CGColor.init(red: 208/255, green: 44/255, blue: 115/255, alpha: 1.0))
+public struct MetroDesignKit {
    
     @available(iOS 15.0, *)
     
@@ -13,7 +13,7 @@ public struct TMoDesignKit {
             }
             
             .frame(width: 160, height: 40, alignment: .center)
-            .background(brandColor)
+            .background(.purple)
             .cornerRadius(5.0)
             //.font(.largeTitle)
             .foregroundColor(.white)
@@ -35,7 +35,7 @@ public struct TMoDesignKit {
                         .resizable()
                     
                         .padding(10)
-                        .foregroundColor(brandColor)
+                        .foregroundColor(.purple)
                 }
                 .frame(width: 60,height: 60,alignment: .center)
             } else {
