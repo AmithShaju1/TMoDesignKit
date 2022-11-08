@@ -457,7 +457,10 @@ public struct TMoDesignKit {
         var value: String
         public var id: String { key }
         
-        
+        public init(key: String, value: String) {
+            self.key = key
+            self.value = value
+        }
     }
     
     
