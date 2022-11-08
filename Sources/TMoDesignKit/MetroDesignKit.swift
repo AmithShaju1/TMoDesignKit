@@ -1,5 +1,5 @@
 import SwiftUI
-public var brandColor = Color(CGColor.init(red: 208/255, green: 44/255, blue: 115/255, alpha: 1.0))
+
 public struct MetroDesignKit {
    
     @available(iOS 15.0, *)
