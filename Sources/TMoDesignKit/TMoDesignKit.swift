@@ -437,7 +437,16 @@ public struct TMoDesignKit {
                 Label(cardTitle, systemImage: "")
                     .font(.system(size: 20,weight: .bold))
                 
-               
+                List {
+                    ForEach(data) { element in
+                        HStack{
+                            Text(element.key)
+                            Spacer()
+                            Text(element.value)
+                                
+                        }
+                        }
+                }
                 
             }
             
