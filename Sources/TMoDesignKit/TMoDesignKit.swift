@@ -425,6 +425,42 @@ public struct TMoDesignKit {
         //        }
     }
     
+    public struct TMoTableView: View {
+        @State var cardTitle: String
+        @State var data : [newDict]
+//        @State var rows : Int
+        
+        public var body: some View {
+           
+            VStack {
+                
+                Label(cardTitle, systemImage: "")
+                    .font(.system(size: 20,weight: .bold))
+                
+               
+                
+            }
+            
+            
+            //        }
+        }
+        public init(cardTitle:String, data:[newDict]) {
+            self._cardTitle = State(initialValue: cardTitle)
+            self._data = State(initialValue: data)
+            //self._rows = State(initialValue: rows)
+        }
+      
+    }
+    
+    public struct newDict: Identifiable {
+        var key: String
+        var value: String
+        public var id: String { key }
+        
+        
+    }
+    
+    
     public struct Credit {
         enum Status : String {
             case new = "New"
