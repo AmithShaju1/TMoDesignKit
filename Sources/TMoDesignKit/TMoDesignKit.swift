@@ -31,7 +31,7 @@ public struct TMoDesignKit {
                 Button(action: {
                     print("button pressed")
                 }) {
-                    Image(systemName: "person.circle")
+                    Image(systemName: title)
                         .resizable()
                     
                         .padding(10)
