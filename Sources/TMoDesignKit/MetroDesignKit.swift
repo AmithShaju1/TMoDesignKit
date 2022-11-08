@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct MetroDesignKit {
-   
+//    var magentaTMo = Color.purple
     @available(iOS 15.0, *)
     
     public struct ButtonView: View {

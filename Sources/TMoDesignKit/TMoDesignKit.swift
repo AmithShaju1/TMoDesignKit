@@ -13,7 +13,7 @@ public struct TMoDesignKit {
             }
             
             .frame(width: 160, height: 40, alignment: .center)
-            .background(brandColor)
+            .background(magentaTMo)
             .cornerRadius(5.0)
             //.font(.largeTitle)
             .foregroundColor(.white)
