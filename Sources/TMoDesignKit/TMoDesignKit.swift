@@ -26,6 +26,7 @@ public struct TMoDesignKit {
     
     public struct IconView: View {
         @State var title : String
+        @State var buttonAction :  () -> Void
         public var body: some View {
             if #available(iOS 15.0, *) {
                 Button(action: {
@@ -43,8 +44,9 @@ public struct TMoDesignKit {
             }
             
         }
-        public init(title:String) {
+        public init(title:String, buttonAction: @escaping () -> Void) {
             self._title = State(initialValue: title)
+            self._buttonAction = State(initialValue: buttonAction)
         }
     }
     
