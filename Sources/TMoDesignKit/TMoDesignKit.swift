@@ -29,9 +29,7 @@ public struct TMoDesignKit {
         @State var buttonAction :  () -> Void
         public var body: some View {
             if #available(iOS 15.0, *) {
-                Button(action: {
-                    print("button pressed")
-                }) {
+                Button(action: buttonAction) {
                     Image(systemName: title)
                         .resizable()
                     
