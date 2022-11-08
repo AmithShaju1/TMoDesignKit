@@ -35,7 +35,7 @@ public struct TMoDesignKit {
                         .resizable()
                     
                         .padding(10)
-                        .foregroundColor(.purple)
+                        .foregroundColor(magentaTMo)
                 }
                 .frame(width: 60,height: 60,alignment: .center)
             } else {
